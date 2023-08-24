@@ -1,11 +1,8 @@
-﻿using System;
-namespace SnakeGame
+﻿namespace SnakeGame
 {
 	public class FoodCreator
 	{
-		public FoodCreator()
-		{
-		}
+		
 	}
 }
 

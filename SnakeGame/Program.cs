@@ -1,4 +1,13 @@
 ﻿namespace SnakeGame;
+
+enum Direction
+{
+    East,
+    West,
+    South,
+    North
+}
+
 class Program
 {
     public static int mapWidth = 17;
@@ -19,7 +28,7 @@ class Program
 
     static void Initialize()
     {
-        snake.HeadTo = (int)Snake.Direction.East;
+        snake.HeadTo = (int)Direction.East;
         for (int index = 0; index < defaultSnakeLength; index++)
             snake.AddBody(new Point(mapWidth / 2 - index, mapHeight / 2));
     }

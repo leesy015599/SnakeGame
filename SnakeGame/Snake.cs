@@ -25,15 +25,6 @@ namespace SnakeGame
 			get { return _bodyPartList; }
 		}
 
-		// enum
-		public enum Direction
-		{
-			East,
-			West,
-			South,
-			North
-		}
-
 		// constructor
 		public Snake()
 		{

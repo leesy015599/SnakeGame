@@ -27,15 +27,15 @@
 			List<Point> bodyPart = snake.BodyPartList;
 			char snakeHeadSymbol;
 
-			switch ((Snake.Direction)snake.HeadTo)
+			switch ((Direction)snake.HeadTo)
 			{
-				case Snake.Direction.East:
+				case Direction.East:
 					snakeHeadSymbol = Symbol.snakeEast;
 					break;
-				case Snake.Direction.West:
+				case Direction.West:
 					snakeHeadSymbol = Symbol.snakeWest;
 					break;
-				case Snake.Direction.South:
+				case Direction.South:
 					snakeHeadSymbol = Symbol.snakeSouth;
 					break;
 				default: // Direction.North
