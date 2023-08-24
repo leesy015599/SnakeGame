@@ -2,45 +2,9 @@ namespace SnakeGame
 {
 	public class Snake
 	{
-		public class Part
-		{
-			// private field
-			private int _row;
-			private int _col;
-
-			// public property
-			public int Row
-			{
-				get { return _row; }
-				set
-				{
-					if ((0 < value) && (value < Program.mapHeight + 1))
-						_row = value;
-				}
-			}
-
-			public int Col
-			{
-				get { return _col; }
-				set
-				{
-					if ((0 < value) && (value < Program.mapWidth + 1))
-						_col = value;
-				}
-			}
-
-			// constructor
-			private Part() {}
-
-			public Part(int row, int col)
-			{
-				Row = row;
-				Col = col;
-			}
-		}
-
+		// private field
 		private int _headTo;
-		private List<Part> _body;
+		private List<Point> _bodyPartList;
 
 		// public property
 		public int HeadTo
@@ -56,9 +20,9 @@ namespace SnakeGame
 			}
 		}
 
-		public List<Part> Body
+		public List<Point> BodyPartList
 		{
-			get { return _body; }
+			get { return _bodyPartList; }
 		}
 
 		// enum
@@ -73,12 +37,12 @@ namespace SnakeGame
 		// constructor
 		public Snake()
 		{
-			_body = new();
+			_bodyPartList = new();
 		}
 
-		public void AddBody(Part newPart)
+		public void AddBody(Point newPart)
 		{
-			_body.Add(newPart);
+			_bodyPartList.Add(newPart);
 		}
 	}
 }

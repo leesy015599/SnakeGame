@@ -2,10 +2,6 @@
 {
 	public class ConsoleIO
 	{
-		public ConsoleIO()
-		{
-		}
-
 		public static void PrintMapEdge(int mapWidth, int mapHeight)
 		{
 			// 위 아래 가로줄
@@ -21,16 +17,14 @@
 			int edgeHeight = mapHeight + 2;
 			for (int row = 0; row < edgeHeight; row++)
 			{
-				Console.SetCursorPosition(0, row);
-				Console.Write('\u25a1'); // □
-				Console.SetCursorPosition(mapWidth + 1, row);
-				Console.Write('\u25a1'); // □
+				PrintPoint(0, row, Symbol.mapEdge);
+				PrintPoint(mapWidth + 1, row, Symbol.mapEdge);
 			}
 		}
 
 		public static void PrintSnake(Snake snake)
 		{
-			List<Snake.Part> body = snake.Body;
+			List<Point> bodyPart = snake.BodyPartList;
 			char snakeHeadSymbol;
 
 			switch ((Snake.Direction)snake.HeadTo)
@@ -48,13 +42,13 @@
 					snakeHeadSymbol = Symbol.snakeNorth;
 					break;
 			}
-			PrintPoint(body[0].Row, body[0].Col, snakeHeadSymbol);
+			PrintPoint(bodyPart[0].Col, bodyPart[0].Row, snakeHeadSymbol);
 
-			for (int index = 1; index < body.Count; index++)
-				PrintPoint(body[index].Row, body[index].Col, Symbol.snakeBody);
+			for (int index = 1; index < bodyPart.Count; index++)
+				PrintPoint(bodyPart[index].Col, bodyPart[index].Row, Symbol.snakeBody);
 		}
 
-		private static void PrintPoint(int row, int col, char symbol)
+		private static void PrintPoint(int col, int row, char symbol)
 		{
 			Console.SetCursorPosition(col, row);
 			Console.Write(symbol);
