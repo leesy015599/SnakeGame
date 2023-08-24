@@ -48,7 +48,7 @@
 				PrintPoint(bodyPart[index].Col, bodyPart[index].Row, Symbol.snakeBody);
 		}
 
-		private static void PrintPoint(int col, int row, char symbol)
+		public static void PrintPoint(int col, int row, char symbol)
 		{
 			Console.SetCursorPosition(col, row);
 			Console.Write(symbol);
