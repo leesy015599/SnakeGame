@@ -14,7 +14,7 @@
 				isOnSnake = false;
 				newCol = Program.random.Next(1, Program.mapWidth + 1);
 				newRow = Program.random.Next(1, Program.mapHeight + 1);
-				for (int index = 0; index < snake.BodyPartList.Count(); index++)
+				for (int index = 1; index < snake.BodyPartList.Count(); index++)
 				{
 					if ((snake.BodyPartList[index].Col == newCol)
 						&& (snake.BodyPartList[index].Row == newRow))

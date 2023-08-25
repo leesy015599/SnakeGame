@@ -5,6 +5,7 @@
         // private field
         private int _col;
         private int _row;
+        private char _symbol;
 
 		// public property
         public int Col
@@ -27,13 +28,16 @@
             }
         }
 
+        public char Symbol{ get; set; }
+
         // constructor
         private Point() { }
 
-        public Point(int col, int row)
+        public Point(int col, int row, char symbol)
         {
             Col = col;
             Row = row;
+            Symbol = symbol;
         }
     }
 }
